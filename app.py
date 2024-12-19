@@ -5,8 +5,12 @@ import numpy as np
 
 # Tentukan path file secara dinamis
 base_dir = Path(__file__).resolve().parent
-model = base_dir / "lung_cancer_sgd_model.pkl"
-scaler = base_dir / "scaler.pkl"
+model_path = base_dir / "lung_cancer_sgd_model.pkl"
+scaler_path = base_dir / "scaler.pkl"
+
+# Load model dan scaler
+model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
 
 # Tampilan aplikasi
 st.markdown("<h2>Prediksi Kanker Paru-Paru - Menggunakan Stochastic Gradient Descent</h2>", unsafe_allow_html=True)
@@ -23,7 +27,7 @@ with col1:
     allergy = st.selectbox("Apakah Anda Memiliki Alergi?", ['Tidak', 'Ya'])
     coughing = st.selectbox("Apakah Anda Mengalami Batuk?", ['Tidak', 'Ya'])
     chest_pain = st.selectbox("Apakah Anda Mengalami Nyeri Dada?", ['Tidak', 'Ya'])
-    
+
 with col2:
     age = st.number_input("Usia:", min_value=1, max_value=100, step=1)
     peer_pressure = st.selectbox("Apakah Anda Merasakan Tekanan Sosial?", ['Tidak', 'Ya'])
