@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 from pathlib import Path
+import numpy as np
 
 # Tentukan path file secara dinamis
 base_dir = Path(__file__).resolve().parent
