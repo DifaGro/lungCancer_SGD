@@ -3,8 +3,8 @@ import joblib
 import numpy as np
 
 # Muat model dan scaler
-model = joblib.load('lung_cancer_sgd_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load("lung_cancer_sgd_model.pkl")
+scaler = joblib.load("scaler.pkl")
 
 # Tampilan aplikasi
 st.markdown("<h2>Prediksi Kanker Paru-Paru - Menggunakan Stochastic Gradient Descent</h2>", unsafe_allow_html=True)
