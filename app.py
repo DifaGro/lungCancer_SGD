@@ -1,10 +1,19 @@
 import streamlit as st
 import joblib
-import numpy as np
+from pathlib import Path
+
+# Tentukan path file secara dinamis
+base_dir = Path(__file__).resolve().parent
+model_path = base_dir / "model" / "lung_cancer_sgd_model.pkl"
+scaler_path = base_dir / "model" / "scaler.pkl"
 
 # Muat model dan scaler
-model = joblib.load("lung_cancer_sgd_model.pkl")
-scaler = joblib.load("scaler.pkl")
+try:
+    model = joblib.load(model_path)
+    scaler = joblib.load(scaler_path)
+except FileNotFoundError:
+    st.error("Model atau scaler tidak ditemukan. Pastikan file berada di folder 'model'.")
+    st.stop()
 
 # Tampilan aplikasi
 st.markdown("<h2>Prediksi Kanker Paru-Paru - Menggunakan Stochastic Gradient Descent</h2>", unsafe_allow_html=True)
