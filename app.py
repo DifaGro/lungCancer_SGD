@@ -5,12 +5,8 @@ import numpy as np
 
 # Tentukan path file secara dinamis
 base_dir = Path(__file__).resolve().parent
-model_path = base_dir / "lung_cancer_sgd_model.pkl"
-scaler_path = base_dir / "scaler.pkl"
-
-# Muat model dan scaler menggunakan joblib
-model = joblib.load(model_path)
-scaler = joblib.load(scaler_path)
+model = base_dir / "lung_cancer_sgd_model.pkl"
+scaler = base_dir / "scaler.pkl"
 
 # Tampilan aplikasi
 st.markdown("<h2>Prediksi Kanker Paru-Paru - Menggunakan Stochastic Gradient Descent</h2>", unsafe_allow_html=True)
