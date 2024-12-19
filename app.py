@@ -4,8 +4,8 @@ from pathlib import Path
 
 # Tentukan path file secara dinamis
 base_dir = Path(__file__).resolve().parent
-model_path = base_dir "lung_cancer_sgd_model.pkl"
-scaler_path = base_dir "scaler.pkl"
+model_path = base_dir / "lung_cancer_sgd_model.pkl"
+scaler_path = base_dir / "scaler.pkl"
 
 # Muat model dan scaler
 try:
