@@ -65,4 +65,4 @@ features_scaled = scaler.transform(features)
 if st.button("Prediksi"):
     prediction = model.predict(features_scaled)
     result = "Kemungkinan Mengidap Kanker Paru-Paru" if prediction[0] == 2 else "Kemungkinan Tidak Mengidap Kanker Paru-Paru"
-    st.write(f"Hasil Prediksi: {result}")
+    st.write(f"Hasil Prediksi : {result}")
